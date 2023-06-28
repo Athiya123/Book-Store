@@ -35,10 +35,10 @@ function AppContent() {
           <Button component={Link} to="/login" color="inherit">Login</Button>
           <Button component={Link} to="/signup" color="inherit">Signup</Button>
           {isLoggedIn ? (
-            <>
+            <React.Fragment>
               <Button component={Link} to="/listing" color="inherit">Listing</Button>
               <Button onClick={handleLogout} color="inherit">Logout</Button>
-            </>
+            </React.Fragment>
           ) : (
             <Button component={Link} to="/login" color="inherit">Logout</Button>
           )}
@@ -55,4 +55,3 @@ function AppContent() {
 }
 
 export default App;
-

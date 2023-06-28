@@ -119,7 +119,7 @@ function Listing() {
     <div>
       <h1>Listing</h1>
       {isLoggedIn && isAdmin && (
-        <>
+        <div>
           <h2>Create Book</h2>
           <Card sx={{ backgroundColor: '#f5f5f5', padding: '10px' }}>
             <TextField
@@ -142,7 +142,7 @@ function Listing() {
               Add Book
             </Button>
           </Card>
-        </>
+        </div>
       )}
 
       <h2>Books</h2>
@@ -152,7 +152,7 @@ function Listing() {
             <Card sx={{ height: '100%', backgroundColor: '#f5f5f5' }}>
               <CardContent>
                 {editBookId === book._id ? (
-                  <>
+                  <div>
                     <Typography variant="h6" sx={{ marginBottom: '10px' }}>Title:</Typography>
                     <TextField
                       type="text"
@@ -180,9 +180,9 @@ function Listing() {
                     <Button onClick={handleCancelEdit} variant="outlined" color="error">
                       Cancel
                     </Button>
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div>
                     <Typography variant="h6" sx={{ marginBottom: '10px' }}>Title:</Typography>
                     <Typography variant="body1" component="div" sx={{ color: blueGrey[900] }}>
                       {book.title}
@@ -192,7 +192,7 @@ function Listing() {
                       {book.author}
                     </Typography>
                     {isLoggedIn && isAdmin && (
-                      <>
+                      <div>
                         <IconButton
                           onClick={() => handleEditBook(book._id)}
                           color="warning"
@@ -207,9 +207,9 @@ function Listing() {
                         >
                           <DeleteIcon />
                         </IconButton>
-                      </>
+                      </div>
                     )}
-                  </>
+                  </div>
                 )}
               </CardContent>
             </Card>
