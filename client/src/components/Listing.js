@@ -20,7 +20,7 @@ function Listing() {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/books');
+      const response = await axios.get('https://book-store-welq.onrender.com/api/books');
       setBooks(response.data);
     } catch (error) {
       console.error(error.response.data);
@@ -33,7 +33,7 @@ function Listing() {
 
       console.log(token);
       const response = await axios.post(
-        'http://localhost:8000/api/books',
+        'https://book-store-welq.onrender.com/api/books',
         {
           title: newBookTitle,
           author: newBookAuthor,
@@ -61,7 +61,7 @@ function Listing() {
       console.log(token);
 
       await axios.put(
-        `http://localhost:8000/api/books/${bookId}`,
+        `https://book-store-welq.onrender.com/api/books/${bookId}`,
         {
           title: updatedTitle,
           author: updatedAuthor,
@@ -89,7 +89,7 @@ function Listing() {
 
       console.log(token);
 
-      await axios.delete(`http://localhost:8000/api/books/${bookId}`, {
+      await axios.delete(`https://book-store-welq.onrender.com/api/books/${bookId}`, {
         headers: {
           Authorization: `${token}`,
         },

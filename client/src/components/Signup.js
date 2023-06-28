@@ -37,7 +37,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/signup', {
+      const response = await axios.post('https://book-store-welq.onrender.com/api/auth/signup', {
         name,
         email,
         password,
